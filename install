@@ -1,0 +1,28 @@
+#!/bin/bash
+set -e
+
+# Fetch dependencies.
+git submodule update --init --recursive
+
+# Set safe symbolic links.
+link () {
+	rootfile=~/.$1
+	dotfile=~/.dotfiles/$1
+	echo "Linking $rootfile to $dotfile..."
+	if [ -L $rootfile ] || [ -e $rootfile ]; then
+		mv $rootfile ~/.tmp
+	fi
+	ln -s $dotfile $rootfile
+}
+
+# Do not symlink some files.
+ignore_list="install LICENSE README.md"
+
+# Loop over all files and directories
+# in the root folder.
+for file in *; do
+	# Check if the file or directory should be symlinked.
+	if ! echo $ignore_list | grep -w $file > /dev/null; then
+		link $file
+	fi
+done
