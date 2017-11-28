@@ -1,1 +1,0 @@
-/home/julian/.dotfiles/zshrc
