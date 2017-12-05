@@ -39,6 +39,8 @@ let g:ale_fixers = {
 " Miscellaneous ALE configuration.
 let g:ale_sign_column_always = 1
 let g:ale_set_highlights = 0
+let g:c_build_dir = 'build'
+
 let g:ale_cpp_clangtidy_options = '-std=c++11'
 let g:ale_c_clangformat_options = '-style="{BasedOnStyle: llvm, IndentWidth: 4}"'
 
@@ -47,6 +49,7 @@ au FileType cpp let b:dispatch = 'make -C build'
 
 " Custom keybinds.
 nmap <F2> :Dispatch<CR>
+nmap <F3> :ALEFix<CR>
 
 " Tie clipboard to Vim.
 set clipboard=unnamedplus
