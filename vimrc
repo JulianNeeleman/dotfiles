@@ -53,10 +53,7 @@ au FileType cmake,cpp let b:dispatch = 'make -C build'
 " Custom keybinds.
 nmap <F2> :Dispatch<CR>
 nmap <F3> :ALEFix<CR>
-<<<<<<< HEAD
 nmap <F4> :call CurtineIncSw()<CR>
-=======
->>>>>>> c7adccb07e28ba455f7efb25474d9c5861f4ff1f
 
 " Tie clipboard to Vim.
 set clipboard=unnamedplus
