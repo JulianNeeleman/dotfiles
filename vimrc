@@ -35,6 +35,7 @@ let g:ale_linters = {
 " Fixer settings.
 let g:ale_fixers = {
 \   'cpp': ['clang-format'],
+\   'javascript': ['prettier'],
 \   'json': ['prettier']
 \}
 
