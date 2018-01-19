@@ -1,0 +1,9 @@
+// Copyright {{YEAR}} {{COMPANY}} All Rights Reserved.
+
+#ifndef {{MACRO_GUARD}}
+#define {{MACRO_GUARD}}
+
+class {{CURSOR}}{{CLASS}} {
+};
+
+#endif // {{MACRO_GUARD}}

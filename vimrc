@@ -13,6 +13,7 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'derekwyatt/vim-fswitch'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'scrooloose/nerdtree'
+Plugin 'tibabit/vim-templates'
 Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'w0rp/ale'
@@ -21,6 +22,10 @@ call vundle#end()
 filetype plugin indent on
 syntax on
 " End of Vundle configuration.
+
+" Template settings.
+let g:tmpl_search_paths = ['~/.vim/templates']
+let g:tmpl_company = 'ReSnap b.v.'
 
 " Tmux compatibility.
 set term=screen-256color
@@ -36,7 +41,8 @@ let g:ale_linters = {
 let g:ale_fixers = {
 \   'cpp': ['clang-format'],
 \   'javascript': ['prettier'],
-\   'json': ['prettier']
+\   'json': ['prettier'],
+\   'python': ['autopep8']
 \}
 
 " Miscellaneous ALE configuration.

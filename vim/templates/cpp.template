@@ -1,0 +1,5 @@
+// Copyright {{YEAR}} {{COMPANY}} All Rights Reserved.
+
+int main() {
+    return 0;
+}
