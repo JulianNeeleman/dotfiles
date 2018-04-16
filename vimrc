@@ -16,6 +16,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'tibabit/vim-templates'
 Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-unimpaired'
+Plugin 'diepm/vim-rest-console'
 Plugin 'w0rp/ale'
 
 call vundle#end()
@@ -53,8 +54,16 @@ let g:c_build_dir = 'build'
 let g:ale_cpp_clangtidy_options = '-std=c++11'
 let g:ale_c_clangformat_options = '-style="{BasedOnStyle: llvm, IndentWidth: 4}"'
 
+" NERDTree configuration.
+let NERDTreeIgnore = ['\.pyc$']
+
 " Dispatch defaults.
 au FileType cmake,cpp let b:dispatch = 'make -C build'
+au FileType rest let b:dispatch = ''
+
+" REST client settings.
+let g:vrc_horizontal_split = 1
+let g:vrc_trigger = '<F2>'
 
 " Custom keybinds.
 nmap <F2> :Dispatch<CR>
@@ -69,3 +78,4 @@ set number
 
 " FileType settings.
 au BufNewFile,BufRead *.rsl set syntax=python
+au FileType yaml setlocal ts=2 sw=2 sts=2 et

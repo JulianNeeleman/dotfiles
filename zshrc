@@ -92,3 +92,13 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+export NVM_DIR="/home/julian/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /home/julian/projects/layout/node_modules/tabtab/.completions/serverless.zsh ]] && . /home/julian/projects/layout/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /home/julian/projects/layout/node_modules/tabtab/.completions/sls.zsh ]] && . /home/julian/projects/layout/node_modules/tabtab/.completions/sls.zsh
