@@ -5,8 +5,6 @@ set -e
 vundle_path="vim/bundle/Vundle.vim"
 if [ ! -d ${vundle_path} ]; then
     git clone git@github.com:VundleVim/Vundle.vim.git
-else
-    (cd ${vundle_path} && git pull)
 fi
 
 # Install Vim plugins.
