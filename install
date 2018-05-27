@@ -14,24 +14,18 @@ vim +PluginInstall +qall
 git submodule update --init --recursive
 
 # Set safe symbolic links.
-backup_path="${HOME}/backup"
 link () {
-	dotfile=$1
-	rootfile=${HOME}/.${dotfile}
-	echo "Linking $rootfile to $dotfile..."
+    filename=$1
+    dotfile=${HOME}/.dotfiles/${filename}
+	rootfile=${HOME}/.${filename}
 	if [ ! -L $rootfile ]; then
+	    echo "Linking $rootfile to $dotfile..."
         ln -s $dotfile $rootfile
     fi
 }
 
 # Do not symlink some files.
 ignore_list="install LICENSE README.md"
-
-# Loop over all files and directories
-# in the root folder.
-if [ ! -d ${backup_path} ]; then
-    mkdir ${backup_path}
-fi
 
 for file in *; do
 	# Check if the file or directory should be symlinked.
