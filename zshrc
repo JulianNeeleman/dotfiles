@@ -102,3 +102,13 @@ export NVM_DIR="/home/julian/.nvm"
 # tabtab source for sls package
 # uninstall by removing these lines or running `tabtab uninstall sls`
 [[ -f /home/julian/projects/layout/node_modules/tabtab/.completions/sls.zsh ]] && . /home/julian/projects/layout/node_modules/tabtab/.completions/sls.zsh
+
+# Use most for manpages.
+export MANPAGER=most # in ~/.bashrc or similar
+
+# Colorize GCC output.
+export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+
+# Set default compilers.
+export CC="/usr/local/bin/clang"
+export CXX="/usr/local/bin/clang++"

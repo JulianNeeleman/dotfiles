@@ -8,3 +8,6 @@
 
 # Rest files.
 *.rest
+
+# CTags.
+tags
