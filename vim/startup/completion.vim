@@ -3,3 +3,4 @@
 " License       : MIT
 " Description   : Code completion configuration.
 
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'

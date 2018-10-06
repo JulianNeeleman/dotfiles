@@ -8,5 +8,9 @@
 	st = status
 	ci = commit
 	br = branch
+    tree = log --graph --decorate --pretty=oneline --abbrev-commit
+    pup = push -u origin HEAD
+    please = push --force-with-lease
+    bh = "for-each-ref --count=10 --sort=-committerdate refs/heads/ --format='%(refname:short)'"
 [core]
 	excludesfile = ~/.gitignore_global

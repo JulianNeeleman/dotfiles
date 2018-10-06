@@ -5,7 +5,7 @@
 
 nmap <F2> :Dispatch<CR>
 nmap <F3> :ALEFix<CR>
-nmap <F4> :call CurtineIncSw()<CR>
+nmap <F4> :w! <CR>
 nmap <silent> <F5> :call ClangCheck()<CR><CR>
 
 " Dispatch binds for specific filetypes.

@@ -25,7 +25,7 @@ link () {
 }
 
 # Do not symlink some files.
-ignore_list="install LICENSE README.md"
+ignore_list="install LICENSE README.md scripts"
 
 for file in *; do
 	# Check if the file or directory should be symlinked.

@@ -108,7 +108,11 @@ export MANPAGER=most # in ~/.bashrc or similar
 
 # Colorize GCC output.
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+export GTEST_COLOR=1
 
-# Set default compilers.
-export CC="/usr/local/bin/clang"
-export CXX="/usr/local/bin/clang++"
+# GCC version.
+export CC='/usr/local/bin/clang-7'
+export CXX='/usr/local/bin/clang++'
+
+# Slack token.
+export SLACK_TOKEN='xoxp-4751533740-8555447383-231044988800-635d8d0a3ba7cea5ec3cd7e98ddca314'

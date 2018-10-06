@@ -10,3 +10,6 @@ set term=screen-256color
 
 " Filetype handling.
 au FileType yaml setlocal ts=2 sw=2 sts=2 et
+
+" Ignore certain artifacts in filebrowser.
+let NERDTreeIgnore = ['\.pyc$', '__pycache__']
