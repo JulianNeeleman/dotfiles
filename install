@@ -3,40 +3,51 @@ set -e
 
 # Get location of this script.
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
+
+# Set a backup dir for existing dotfiles.
 BACKUP_DIR=${HOME}/.backup_dotfiles
 
-# Set up Vundle.
-vundle_path="vim/bundle/Vundle.vim"
-if [ ! -d ${vundle_path} ]; then
-   	git clone git@github.com:VundleVim/Vundle.vim.git
-fi
-
-# Install Vim plugins.
-vim +PluginInstall +qall
-
-# Fetch dependencies.
-git submodule update --init --recursive
+# Symlink the following files.
+SYMLINK_LIST="config editorconfig gitconfig gitignore_global vim vimrc Xresources zshrc"
 
 # Create symbolic links.
 mkdir -p ${BACKUP_DIR}
 link () {
 	filename=$1
-   	dotfile=${DIR}//${filename}
+   	dotfile=${DIR}/${filename}
 	rootfile=${HOME}/.${filename}
-	if [ -e $rootfile ] && [ ! -L $rootfile ]; then
-		echo "Moving $rootfile" to ${BACKUP_DIR}..."
-		mv $rootfile ${BACKUP_DIR}
+	if [ -L $rootfile ]; then
+		echo "Deleting existing symlink $rootfile..." 
+		rm "$rootfile"
+	fi
+	if [ -e $rootfile ]; then
+		echo "Moving $rootfile to ${BACKUP_DIR}..."
+		mv "$rootfile" "$BACKUP_DIR"
+    	fi
 	echo "Linking $rootfile to $dotfile..."
         ln -s $dotfile $rootfile
-    fi
 }
 
-# Symlink the following files.
-symlink_list="vimrc zshrc"
+contains() {
+	[[ $1 =~ (^|[[:space:]])$2($|[[:space:]]) ]]
+}
 
 for file in *; do
-	# Check if the file or directory should be symlinked.
-	if echo $symlink_list | grep -w $file > /dev/null; then
-		link $file
+	if contains "$SYMLINK_LIST" "$file"; then
+		link "$file"
 	fi
 done
+
+VUNDLE_PATH="${DIR}/vim/bundle"
+mkdir -p ${VUNDLE_PATH}
+if [ ! -e ${VUNDLE_PATH}/Vundle.vim ]; then
+	echo "Installing Vundle..."
+   	cd ${VUNDLE_PATH} && git clone git@github.com:VundleVim/Vundle.vim.git
+	echo "Vundle installed."
+fi
+
+echo "Installing vim plugins..."
+vim +PluginInstall +qall
+echo "Vim plugins installed."
+
+
