@@ -149,11 +149,11 @@ bindsym $mod+r mode "resize"
 # Custom configuration starts here. #
 #####################################
 
-# launch polybar
-# exec_always --no-startup-id ~/.config/polybar/launch.sh &
+# load wallpaper
+exec_always --no-startup-id nitrogen --restore 
 
-# start rofi (a program launcher)
-bindsym $mod+d exec --no-startup-id dmenu_run
+# load Xresources (shell configuration) 
+exec_always --no-startup-id xrdb -load ~/.Xresources 
 
 # disable window titlebars
 for_window [class="^.*"] border pixel 0
