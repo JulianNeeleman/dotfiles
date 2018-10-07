@@ -1,10 +1,14 @@
 #!/bin/bash
 set -e
 
+# Get location of this script.
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
+BACKUP_DIR=${HOME}/.backup_dotfiles
+
 # Set up Vundle.
 vundle_path="vim/bundle/Vundle.vim"
 if [ ! -d ${vundle_path} ]; then
-    git clone git@github.com:VundleVim/Vundle.vim.git
+   	git clone git@github.com:VundleVim/Vundle.vim.git
 fi
 
 # Install Vim plugins.
@@ -13,23 +17,26 @@ vim +PluginInstall +qall
 # Fetch dependencies.
 git submodule update --init --recursive
 
-# Set safe symbolic links.
+# Create symbolic links.
+mkdir -p ${BACKUP_DIR}
 link () {
-    filename=$1
-    dotfile=${HOME}/.dotfiles/${filename}
+	filename=$1
+   	dotfile=${DIR}//${filename}
 	rootfile=${HOME}/.${filename}
-	if [ ! -L $rootfile ]; then
-	    echo "Linking $rootfile to $dotfile..."
+	if [ -e $rootfile ] && [ ! -L $rootfile ]; then
+		echo "Moving $rootfile" to ${BACKUP_DIR}..."
+		mv $rootfile ${BACKUP_DIR}
+	echo "Linking $rootfile to $dotfile..."
         ln -s $dotfile $rootfile
     fi
 }
 
-# Do not symlink some files.
-ignore_list="install LICENSE README.md scripts"
+# Symlink the following files.
+symlink_list="vimrc zshrc"
 
 for file in *; do
 	# Check if the file or directory should be symlinked.
-	if ! echo $ignore_list | grep -w $file > /dev/null; then
+	if echo $symlink_list | grep -w $file > /dev/null; then
 		link $file
 	fi
 done

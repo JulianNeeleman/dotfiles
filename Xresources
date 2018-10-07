@@ -1,0 +1,4 @@
+#include "/home/julian/projects/third_party/Xresources-themes/xcolors-woodlands.Xresources"
+
+URxvt.scrollBar: false
+URxvt.font: xft:inconsolata:size=9
