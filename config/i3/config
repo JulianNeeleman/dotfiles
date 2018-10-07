@@ -149,14 +149,18 @@ bindsym $mod+r mode "resize"
 # Custom configuration starts here. #
 #####################################
 
-# load wallpaper
-exec_always --no-startup-id nitrogen --restore 
-
-# load Xresources (shell configuration) 
-exec_always --no-startup-id xrdb -load ~/.Xresources 
-
-# disable window titlebars
+# disable window titlebars (required for i3-gaps to work)
 for_window [class="^.*"] border pixel 0
+
+# load application launcher
+bindsym $mod+d exec --no-startup-id rofi -show run
+exec_always --no-startup-id rofi
+
+# load wallpaper
+exec_always --no-startup-id nitrogen --restore
+
+# load Xresources (shell configuration)
+exec_always --no-startup-id xrdb -load ~/.Xresources
 
 # configure gaps
 gaps inner 10

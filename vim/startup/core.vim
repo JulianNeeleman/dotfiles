@@ -6,7 +6,6 @@
 set nocompatible
 set number
 set clipboard=unnamedplus
-set term=screen-256color
 
 " Filetype handling.
 au FileType yaml setlocal ts=2 sw=2 sts=2 et
