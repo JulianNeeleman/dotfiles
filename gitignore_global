@@ -5,6 +5,7 @@
 
 # Python.
 *.pyc
+.mypy_cache/
 
 # Rest files.
 *.rest

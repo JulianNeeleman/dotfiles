@@ -2,3 +2,11 @@ vim/bundle/
 oh-my-zsh/
 
 config/pulse
+config/Slack/
+config/dconf/
+config/evolution/
+config/gtk-3.0/
+config/ibus/
+config/nautilus/
+config/user-dirs.dirs
+config/user-dirs.locale
