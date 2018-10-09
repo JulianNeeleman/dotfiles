@@ -12,3 +12,6 @@
 
 # CTags.
 tags
+
+# Node.
+node_modules/
