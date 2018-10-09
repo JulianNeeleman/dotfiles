@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "jsonlint": "^1.6.3",
     "prettier": "^1.14.3"
   }
 }
