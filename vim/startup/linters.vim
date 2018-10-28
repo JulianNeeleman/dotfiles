@@ -18,15 +18,18 @@ let g:ale_cpp_clangtidy_checks = [
 \   '*',
 \   '-cert-err58-cpp',
 \   '-cppcoreguidelines-pro-bounds-array-to-pointer-decay',
+\   '-cppcoreguidelines-pro-type-member-init',
 \   '-cppcoreguidelines-owning-memory',
 \   '-cppcoreguidelines-special-member-functions',
 \   '-cppcoreguidelines-pro-type-vararg',
 \   '-fuchsia-default-arguments',
 \   '-fuchsia-overloaded-operator',
 \   '-fuchsia-statically-constructed-objects',
+\   '-hicpp-member-init',
 \   '-hicpp-no-array-decay',
 \   '-hicpp-special-member-functions',
 \   '-hicpp-use-equals-delete',
 \   '-hicpp-vararg',
+\   '-misc-unused-parameters',
 \   '-modernize-use-equals-delete'
 \]

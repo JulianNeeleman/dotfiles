@@ -1,7 +1,12 @@
 vim/bundle/
 oh-my-zsh/
 
+config/enchant
+config/gedit
+config/libreoffice
+config/mono.addins
 config/pulse
+config/Pinta
 config/Slack/
 config/dconf/
 config/evolution/
