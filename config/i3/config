@@ -163,8 +163,8 @@ exec_always --no-startup-id nitrogen --restore
 exec_always --no-startup-id xrdb -load ~/.Xresources
 
 # configure gaps
-gaps inner 10
-gaps outer 5
+gaps inner 40
+gaps outer 20
 
 # don't let mouse movement change focus
 focus_follows_mouse no
