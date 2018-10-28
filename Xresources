@@ -27,3 +27,10 @@ URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
 
 URxvt.iso14755: false
 URxvt.iso14755_52: false
+
+URxvt.perl-ext-common: default,matcher
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.button: 1
+
+URxvt.keysym.Shift-Control-U: perl:matcher:last
+URxvt.keysym.Shift-Control-L: perl:matcher:list
