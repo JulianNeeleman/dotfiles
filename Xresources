@@ -1,29 +1,10 @@
-*background:    #1E2541
-*foreground:    #EEFFFF
-*cursorColor:   #EEFFFF
-*color0:        #1E2541
-*color1:        #F0719B
-*color2:        #5AF7B0
-*color3:        #FFA56B
-*color4:        #57C7FF
-*color5:        #C792EA
-*color6:        #89DDFF
-*color7:        #EEFFFF
-*color8:        #354274
-*color9:        #F02E6E
-*color10:       #2CE592
-*color11:       #FF8537
-*color12:       #1DA0E2
-*color13:       #A742EA
-*color14:       #47BAE8
-*color15:       #DEE6E7
-*color16:       #2A335A
+#include "/home/julian/projects/third_party/Xresources-themes/iterm-Chalkboard.Xresources"
+
+URxvt.transparent: true
+URxvt.shading: 30
 
 URxvt.scrollBar: false
 URxvt.font: xft:inconsolata:size=9
-
-URxvt.keysym.Shift-Control-V: eval:paste_clipboard
-URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
 
 URxvt.iso14755: false
 URxvt.iso14755_52: false
@@ -31,6 +12,9 @@ URxvt.iso14755_52: false
 URxvt.perl-ext-common: default,matcher
 URxvt.url-launcher: /usr/bin/xdg-open
 URxvt.matcher.button: 1
+
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
 
 URxvt.keysym.Shift-Control-U: perl:matcher:last
 URxvt.keysym.Shift-Control-L: perl:matcher:list
